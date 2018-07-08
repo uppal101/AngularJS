@@ -2,15 +2,23 @@
 <html ng-app>
   <head>
     <title>My first AngularJS project</title>
+    <link href="styles.css" rel="stylesheet" type='text/css' />
   </head>
-  <body ng-init="name='sanjeet'">
-    <div ng-hide="isHidden">
-      Name: <input type="text" ng-model="name" />   {{ name }}
+  <body ng-init="data={name:'sanjeet', isVisible: false, loggedIn: false, status: 'red'}">
+    <div ng-cloak>
+      <div ng-switch on="data.loggedIn">
+        <div ng-switch-when="true" ng-class="data.status">
+          Welcome {{data.name}}
+        </div>
+        <div ng-switch-when="false" ng-class="data.status">
+          Login
+        </div>
+      </div>
+      <br/>
+      <div ng-show="data.isVisible">
+        Name: <input type="text" ng-model="data.name" />   {{ data.name }}
+      </div>
     </div>
-    Hide: <input type="checkbox" ng-model="isHidden"/>
-    <br />
-    <button ng-click="name='gurpreet'">Change Name</button>
-
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script>
   </body>
