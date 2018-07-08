@@ -4,22 +4,31 @@
     <title>My first AngularJS project</title>
     <link href="styles.css" rel="stylesheet" type='text/css' />
   </head>
-  <body ng-init="data={name:'sanjeet', isVisible: false, loggedIn: false, status: 'red'}">
-    <div ng-cloak>
-      <div ng-switch on="data.loggedIn">
-        <div ng-switch-when="true" ng-class="data.status">
-          Welcome {{data.name}}
-        </div>
-        <div ng-switch-when="false" ng-class="data.status">
-          Login
-        </div>
-      </div>
-      <br/>
-      <div ng-show="data.isVisible">
-        Name: <input type="text" ng-model="data.name" />   {{ data.name }}
-      </div>
-    </div>
-
+  <body ng-init="people =[{name:'sanjeet', age: 26}, {name:'gurpreet', age: 24}, {name:'nikki', age: 25}]">
+    <h3>Iterating through data with ng-repeat</h3>
+      <ul>
+        <li ng-repeat="person in people" ng-cloak>
+          {{person.name}} {{person.age}}
+        </li>
+        <table>
+          <tr>
+            <td>
+              Name
+            </td>
+            <td>
+              Age
+            </td>
+          </tr>
+          <tr ng-repeat="person in people">
+            <td>
+              {{person.name}}
+            </td>
+            <td>
+              {{person.age}}
+            </td>
+          </tr>
+        </table>
+      </ul>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script>
   </body>
 </html>
