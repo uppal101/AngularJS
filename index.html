@@ -1,25 +1,25 @@
 <!DOCTYPE html>
-<html ng-app>
+<html ng-app="app">
   <head>
     <title>My first AngularJS project</title>
-    <link href="styles.css" rel="stylesheet" type='text/css' />
+    <link href="styles.css" rel="stylesheet" type="text/css" />
   </head>
-  <body ng-init="customers=[{name:'sanjeet', joined:'2000-12-02', orderTotal: 10.096, age: 26}, {name:'gurpreet', orderTotal:201.961, joined:'2005-12-07',age: 24}, {name:'nikki', orderTotal: 14.561, joined:'2001-11-02', age: 25}]">
+  <body ng-controller="CustomersController">
     <h3>Customers</h3>
     Filter: <input type="text" ng-model="customerFilter.name"/>
     <br />
         <table>
           <tr>
-            <th ng-click="sortBy='name'; reverse=!reverse">
+            <th ng-click="doSort('name')">
               Name
             </th>
-            <th ng-click="sortBy='age'; reverse=!reverse">
+            <th ng-click="doSort('age')">
               Age
             </th>
-            <th ng-click="sortBy='joined'; reverse=!reverse">
+            <th ng-click="doSort('joined')">
               Joined
             </th>
-            <th ng-click="sortBy='orderTotal'; reverse=!reverse">
+            <th ng-click="doSort('orderTotal')">
                Order Total
             </th>
           </tr>
@@ -39,5 +39,7 @@
           </tr>
         </table>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script>
+    <script> var app = angular.module('app', [])</script>
+    <script src="app/controllers/customersController.js"></script>
   </body>
 </html>
