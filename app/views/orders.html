@@ -1,4 +1,4 @@
-<h3>Orders</h3>
+<h3>{{customer.name}}'s Orders</h3>
 <br />
     <table>
       <tr>
@@ -9,7 +9,7 @@
           Total
         </th>
       </tr>
-      <tr ng-repeat="order in orders" >
+      <tr ng-repeat="order in customer.orders" >
         <td>
           {{order.product}}
         </td>

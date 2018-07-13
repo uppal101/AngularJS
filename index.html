@@ -2,17 +2,17 @@
 <html ng-app="app">
   <head>
     <title>My first AngularJS project</title>
-    <link href="styles.css" rel="stylesheet" type="text/css" />
+    <!-- <link href="styles.css" rel="stylesheet" type="text/css" /> -->
   </head>
-  <body>
+  <body ng-controller="MainCtrl as main">
     <div ng-view></div>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script>
     <script src="scripts/angular-route.js"></script>
     <script>var app = angular.module('app', ['ngRoute'])</script>
     <script src="app/app.js"></script>
     <script src="app/controllers/customersController.js"></script>
-    <script src="app/controllers/ordersController.js"></script>  
     <script src="app/controllers/ordersController.js"></script>
+    <script src="app/services/customersFactory.js"></script>
 
 
   </body>
