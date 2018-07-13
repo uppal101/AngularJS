@@ -1,6 +1,6 @@
 (function() {
    angular.module('app').config(function($routeProvider) {
-     $RouteProvider
+     $routeProvider
      .when('/', {
        controller:'CustomersController',
        templateUrl: 'app/views/customers.html'

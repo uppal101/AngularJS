@@ -3,15 +3,6 @@
     var customerId = $routeParams.customerId;
     $scope.orders = null;
 
-    function init() {
-      //Search the customers for the customerId
-      for (var i=0, len=$scope.customers.length; i<len; i++){
-        if($scope.customers[i].id === parseInt(customerId)) {
-          $scope.orders = $scope.customers[i].orders;
-          break;
-        }
-      }
-    }
     $scope.customers = [
       {
         id: 1,
@@ -54,6 +45,17 @@
         }],
         age: 25
       }];
+
+    function init() {
+      //Search the customers for the customerId
+      for (var i=0, len=$scope.customers.length; i<len; i++){
+        if($scope.customers[i].id === parseInt(customerId)) {
+          $scope.orders = $scope.customers[i].orders;
+          break;
+        }
+      }
+    }
+
       init();
   }
   angular.module('app').controller('OrdersController',OrdersController)
